@@ -11,13 +11,11 @@
 
     <title>Title of the Document</title>
 	<style>
-
-
-@media screen and (max-width:500px) {
-  /* smaller screens */
-	.leaflet-container {
+@media only screen and (min-width: 390px) and (orientation: landscape)
+ {
+.leaflet-container {
 			height: 400px;
-			width: 500px;
+			width: 390px;
 			max-width: 90%;
 			max-height: 100%;
 			margin-left: 5%;
@@ -26,7 +24,7 @@
 .slider {
     -webkit-appearance: none;
     background: #FCF3CF  ;
-    width: 500px;
+    width: 390px;
     height: 20px;
     opacity: 2;
     max-width: 90%;
@@ -35,7 +33,36 @@
    }
 .kaavio {
 			height: 400px;
-			width: 500px;
+			width: 390px;
+			max-width: 90%;
+			max-height: 100%;
+			margin-left: 5%;
+}
+
+}
+@media only screen and (min-width: 844px) and (orientation: portrait) {
+  /* smaller screens */
+	.leaflet-container {
+			height: 400px;
+			width: 844px;
+			max-width: 90%;
+			max-height: 100%;
+			margin-left: 5%;
+		}
+.rangeslider{width: 100%;}
+.slider {
+    -webkit-appearance: none;
+    background: #FCF3CF  ;
+    width: 844px;
+    height: 20px;
+    opacity: 2;
+    max-width: 90%;
+    max-height: 100%;
+    margin-left: 5%;
+   }
+.kaavio {
+			height: 400px;
+			width: 844px;
 			max-width: 90%;
 			max-height: 100%;
 			margin-left: 5%;
