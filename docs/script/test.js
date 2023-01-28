@@ -182,7 +182,7 @@ function kaasupolin()
     var alku, highp, lowp;
     var edellinen = 0;
     var average = 0;
-    high = 0;
+    var high = 0;
     var pedal;
     var times;
     var gaspedal= [];
@@ -192,14 +192,14 @@ function kaasupolin()
     //rajaarvo = cycle.length/topraja;
     //rajaarvo = Math.round(rajaarvo*arvo);
     //alku = rajaarvo - this.raja;
-    console.log(alaraja +" = "+ ylaraja);
+    /*console.log(alaraja +" = "+ ylaraja);
 
     for(let i = alaraja; i<ylaraja;i++)
     {
 	times = cycle[i].querySelector("time");
 	if(times!=null)timeset.push(times.textContent);
 	else{timeset.push("");}
-    }
+    }*/
     
     for(let j = alaraja; j<ylaraja;j++)
     {
@@ -214,7 +214,7 @@ function kaasupolin()
 	if (gaspedal > highp) highp = gaspedal;
 	average = average + gaspedal;
     }
-console.log(timeset.length.toString() + " = "+ dataset.length.toString());
+//console.log(timeset.length.toString() + " = "+ dataset.length.toString());
 //labels:timeset,
 //datasets: [{
 var data = {
@@ -256,10 +256,10 @@ function nopeus(arvo)
     var dataset = [];
     var timeset = [];
     var arvot = [];
-    rajaarvo = cycle.length/topraja;
+    //rajaarvo = cycle.length/topraja;
     //rajaarvo = Math.round(rajaarvo*arvo);
     //alku = rajaarvo - this.raja;
-    console.log(alaraja +" = "+ ylaraja);
+    //console.log(alaraja +" = "+ ylaraja);
 
     for(let i = alaraja; i<ylaraja;i++)
     {
@@ -318,24 +318,24 @@ function kulutus(arvo)
     var alku, highf;
     var edellinen = 0;
     var average = 0;
-    high = 0;
+    var high = 0;
     var fuel;
     var times;
     var fuelrate= [];
     var dataset = [];
     var timeset = [];
     var arvot = [];
-    rajaarvo = cycle.length/topraja;
+    //rajaarvo = cycle.length/topraja;
     //rajaarvo = Math.round(rajaarvo*arvo);
     //alku = rajaarvo - this.raja;
-    console.log(alaraja +" = "+ ylaraja);
-
+    //console.log(alaraja +" = "+ ylaraja);
+/*
     for(let i = alaraja; i<ylaraja;i++)
     {
 	times = cycle[i].querySelector("time");
 	if(times!=null)timeset.push(times.textContent);
 	else{timeset.push("");}
-    }
+    }*/
     
     for(let j = alaraja; j<ylaraja;j++)
     {
@@ -350,7 +350,7 @@ function kulutus(arvo)
 	if (fuelrate > highf) highf = fuelrate;
 	average = average + fuelrate;
     }
-console.log(timeset.length.toString() + " = "+ dataset.length.toString());
+//console.log(timeset.length.toString() + " = "+ dataset.length.toString());
 //	labels:timeset,
 //  datasets: [{
 var data = {
