@@ -182,17 +182,17 @@ function kaasupolin()
     var alku, highp, lowp;
     var edellinen = 0;
     var average = 0;
-    high = 0;
+    var high = 0;
     var pedal;
     var times;
     var gaspedal= [];
-    var ndataset = [];
+    var dataset = [];
     var timeset = [];
     var arvot = [];
     //rajaarvo = cycle.length/topraja;
     //rajaarvo = Math.round(rajaarvo*arvo);
     //alku = rajaarvo - this.raja;
-    //console.log(alaraja +" = "+ ylaraja);
+  //  console.log(alaraja +" = "+ ylaraja);
 /*
     for(let i = alaraja; i<ylaraja;i++)
     {
@@ -210,16 +210,16 @@ function kaasupolin()
 		edellinen = gaspedal;
 	}
 	else gaspedal = edellinen;
-	ndataset.push(gaspedal);
+	dataset.push(gaspedal);
 	if (gaspedal > highp) highp = gaspedal;
 	average = average + gaspedal;
     }
-//console.log(timeset.length.toString() + " = "+ dataset.length.toString());
+console.log(timeset.length.toString() + " = "+ dataset.length.toString());
 //labels:timeset,
 //datasets: [{
 var data = {
     label: 'Kaasupolkimen asento',
-    data: ndataset,
+    data: dataset,
     fill: true,
     borderColor: '#fff',
     tension: 0.1
@@ -253,13 +253,13 @@ function nopeus(arvo)
     var speed;
     var times;
     var nopeus= [];
-    var sdataset = [];
+    var dataset = [];
     var timeset = [];
     var arvot = [];
-    rajaarvo = cycle.length/topraja;
+    //rajaarvo = cycle.length/topraja;
     //rajaarvo = Math.round(rajaarvo*arvo);
     //alku = rajaarvo - this.raja;
-    console.log(alaraja +" = "+ ylaraja);
+    //console.log(alaraja +" = "+ ylaraja);
 
     for(let i = alaraja; i<ylaraja;i++)
     {
@@ -277,17 +277,17 @@ function nopeus(arvo)
 		edellinen = nopeus;
 	}
 	else nopeus = edellinen;
-	sdataset.push(nopeus);
+	dataset.push(nopeus);
 	if (nopeus > high) high = nopeus;
 	average = average + nopeus;
     }
-//console.log(timeset.length.toString() + " = "+ dataset.length.toString());
+console.log(timeset.length.toString() + " = "+ dataset.length.toString());
 
 var data = {
 	labels:timeset,
   datasets: [{
     label: 'Nopeus',
-    data: sdataset,
+    data: dataset,
     fill: true,
     borderColor: '#fff',
     tension: 0.1
@@ -322,13 +322,13 @@ function kulutus(arvo)
     var fuel;
     var times;
     var fuelrate= [];
-    var kdataset = [];
+    var dataset = [];
     var timeset = [];
     var arvot = [];
-    rajaarvo = cycle.length/topraja;
+    //rajaarvo = cycle.length/topraja;
     //rajaarvo = Math.round(rajaarvo*arvo);
     //alku = rajaarvo - this.raja;
-    console.log(alaraja +" = "+ ylaraja);
+    //console.log(alaraja +" = "+ ylaraja);
 /*
     for(let i = alaraja; i<ylaraja;i++)
     {
@@ -346,16 +346,16 @@ function kulutus(arvo)
 		edellinen = fuelrate;
 	}
 	else fuelrate = edellinen;
-	kdataset.push(fuelrate);
+	dataset.push(fuelrate);
 	if (fuelrate > highf) highf = fuelrate;
 	average = average + fuelrate;
     }
-console.log(timeset.length.toString() + " = "+ dataset.length.toString());
+//console.log(timeset.length.toString() + " = "+ dataset.length.toString());
 //	labels:timeset,
 //  datasets: [{
 var data = {
     label: 'Polttoaineenkulutus',
-    data: kdataset,
+    data: dataset,
     fill: true,
     borderColor: '#fff',
     tension: 0.1
@@ -377,10 +377,6 @@ var config = {
 return data;
 }
 
-
-
- 
- 
 function DrawMap(eka, ajoreitti)
 {
       //kartta = document.getElementById("map");
@@ -426,11 +422,3 @@ file.addEventListener("change", function () {
 slider.oninput = function() {
 	ReloadMap(this.value);
 }
-
-
-
-
-
-
-
-
