@@ -11,17 +11,76 @@
 
     <title>Title of the Document</title>
 	<style>
+
+
+@media screen and (max-width:500px) {
+  /* smaller screens */
+	.leaflet-container {
+			height: 400px;
+			width: 500px;
+			max-width: 90%;
+			max-height: 100%;
+			margin-left: 5%;
+		}
+.rangeslider{width: 100%;}
+.slider {
+    -webkit-appearance: none;
+    background: #FCF3CF  ;
+    width: 500px;
+    height: 20px;
+    opacity: 2;
+    max-width: 90%;
+    max-height: 100%;
+    margin-left: 5%;
+   }
+.kaavio {
+			height: 400px;
+			width: 500px;
+			max-width: 90%;
+			max-height: 100%;
+			margin-left: 5%;
+}
+}
+
+@media screen and (max-width:960px) {
+  /* bigger screens */
+	.leaflet-container {
+			height: 400px;
+			width: 960px;
+			max-width: 90%;
+			max-height: 100%;
+			margin-left: 5%;
+		}
+.rangeslider{width: 100%;}
+.slider {
+    -webkit-appearance: none;
+    background: #FCF3CF  ;
+    width: 960px;
+    height: 20px;
+    opacity: 2;
+    max-width: 90%;
+    max-height: 100%;
+    margin-left: 5%;
+   }
+.kaavio {
+			height: 400px;
+			width: 960px;
+			max-width: 90%;
+			max-height: 100%;
+			margin-left: 5%;
+}
 		html, body {
 			height: 100%;
 			margin: 0;
 		}
 		.leaflet-container {
 			height: 400px;
-			width: 1920px;
+			width: 960px;
 			max-width: 90%;
 			max-height: 100%;
 			margin-left: 5%;
-		}
+	}}
+@media screen and (max-width:1920px) {
 .rangeslider{width: 100%;}
 .slider {
     -webkit-appearance: none;
