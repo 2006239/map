@@ -186,21 +186,21 @@ function kaasupolin()
     var pedal;
     var times;
     var gaspedal= [];
-    var dataset = [];
+    var ndataset = [];
     var timeset = [];
     var arvot = [];
     //rajaarvo = cycle.length/topraja;
     //rajaarvo = Math.round(rajaarvo*arvo);
     //alku = rajaarvo - this.raja;
-    console.log(alaraja +" = "+ ylaraja);
-
+    //console.log(alaraja +" = "+ ylaraja);
+/*
     for(let i = alaraja; i<ylaraja;i++)
     {
 	times = cycle[i].querySelector("time");
 	if(times!=null)timeset.push(times.textContent);
 	else{timeset.push("");}
     }
-    
+  */  
     for(let j = alaraja; j<ylaraja;j++)
     {
 	pedal = cycle[j].querySelector("throttle_pos");
@@ -210,16 +210,16 @@ function kaasupolin()
 		edellinen = gaspedal;
 	}
 	else gaspedal = edellinen;
-	dataset.push(gaspedal);
+	ndataset.push(gaspedal);
 	if (gaspedal > highp) highp = gaspedal;
 	average = average + gaspedal;
     }
-console.log(timeset.length.toString() + " = "+ dataset.length.toString());
+//console.log(timeset.length.toString() + " = "+ dataset.length.toString());
 //labels:timeset,
 //datasets: [{
 var data = {
     label: 'Kaasupolkimen asento',
-    data: dataset,
+    data: ndataset,
     fill: true,
     borderColor: '#fff',
     tension: 0.1
@@ -253,7 +253,7 @@ function nopeus(arvo)
     var speed;
     var times;
     var nopeus= [];
-    var dataset = [];
+    var sdataset = [];
     var timeset = [];
     var arvot = [];
     rajaarvo = cycle.length/topraja;
@@ -277,17 +277,17 @@ function nopeus(arvo)
 		edellinen = nopeus;
 	}
 	else nopeus = edellinen;
-	dataset.push(nopeus);
+	sdataset.push(nopeus);
 	if (nopeus > high) high = nopeus;
 	average = average + nopeus;
     }
-console.log(timeset.length.toString() + " = "+ dataset.length.toString());
+//console.log(timeset.length.toString() + " = "+ dataset.length.toString());
 
 var data = {
 	labels:timeset,
   datasets: [{
     label: 'Nopeus',
-    data: dataset,
+    data: sdataset,
     fill: true,
     borderColor: '#fff',
     tension: 0.1
@@ -322,21 +322,21 @@ function kulutus(arvo)
     var fuel;
     var times;
     var fuelrate= [];
-    var dataset = [];
+    var kdataset = [];
     var timeset = [];
     var arvot = [];
     rajaarvo = cycle.length/topraja;
     //rajaarvo = Math.round(rajaarvo*arvo);
     //alku = rajaarvo - this.raja;
     console.log(alaraja +" = "+ ylaraja);
-
+/*
     for(let i = alaraja; i<ylaraja;i++)
     {
 	times = cycle[i].querySelector("time");
 	if(times!=null)timeset.push(times.textContent);
 	else{timeset.push("");}
     }
-    
+  */  
     for(let j = alaraja; j<ylaraja;j++)
     {
 	fuel = cycle[j].querySelector("fuel_rate");
@@ -346,7 +346,7 @@ function kulutus(arvo)
 		edellinen = fuelrate;
 	}
 	else fuelrate = edellinen;
-	dataset.push(fuelrate);
+	kdataset.push(fuelrate);
 	if (fuelrate > highf) highf = fuelrate;
 	average = average + fuelrate;
     }
@@ -355,7 +355,7 @@ console.log(timeset.length.toString() + " = "+ dataset.length.toString());
 //  datasets: [{
 var data = {
     label: 'Polttoaineenkulutus',
-    data: dataset,
+    data: kdataset,
     fill: true,
     borderColor: '#fff',
     tension: 0.1
