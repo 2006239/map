@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
   <head>
 <meta name="robots" content="noindex" />
 <link rel="stylesheet" href="./script/leaflet/leaflet.css"/>
@@ -34,7 +34,7 @@
     margin-left: 5%;
    }
 .kaavio {
-			height: 400px;
+			height: 300px;
 			width: 1920px;
 			max-width: 90%;
 			max-height: 100%;
@@ -44,7 +44,7 @@
 </head>
 <body>
     <h1>
-      Valitse tiedosto
+      Read Local text file using JavaScript
 <input type="file" id="textfile" accept="text/plain">
 
     </h1>
@@ -54,10 +54,10 @@
   <input type="range" min="3" max="100" value="10"
                  class="slider" id="valitsin">
 </div>
-    <div id="map"></div>
+    <div id="map"  style="width: 1920px; height: 300px;"></div>
 </div>
 <div>
-    <canvas id="chart" class="kaavio"></canvas>
+    <canvas id="chart" class="kaavio" style="width: 400px; height: 300px;"></canvas>
 </div>
 
 
@@ -65,4 +65,3 @@
 <!-- <script src="./script/read.js"></script> --!>
  </body>
 </html>
-
