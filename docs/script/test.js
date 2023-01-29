@@ -268,7 +268,7 @@ function nopeus(arvo)
 	if(times!=null)
 	{
 		var temp = times.textContent;
-		timeset.push(temp.split(11));
+		timeset.push(temp.slice(11));
 	}
 	else{timeset.push}
     }
