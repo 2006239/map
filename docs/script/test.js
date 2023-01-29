@@ -264,7 +264,7 @@ function nopeus(arvo)
     for(let i = alaraja; i<ylaraja;i++)
     {
 	times = cycle[i].querySelector("time");
-	if(times!=null)timeset.push(times.textContent);
+	if(times!=null)timeset.push(times.textContent.split(11));
 	else{timeset.push("");}
     }
     
