@@ -1,13 +1,11 @@
 <!DOCTYPE html>
   <head>
 <meta name="robots" content="noindex" />
-<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"> --!>
-<meta name="viewport" content="width=device-width, height=device-hight, initial-scale=1.0, shrink-to-fit=no" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 <link rel="stylesheet" href="./script/leaflet/leaflet.css"/>
  <script src="./script/leaflet/leaflet.js"></script>
 <script src="./script/chart.js/dist/chart.umd.js"></script>
- <!-- <script src="./script/aloitus.js"></script> --!>
- <!-- <script src="./script/ajoreitti.js"></script> --!>
+
 
 
 
@@ -297,7 +295,7 @@ margin-left: 1vw;
 	</style>  
 </head>
 <body>
-
+<form>
 <input type="file" id="textfile" accept="text/plain" >
 <span class="valinta">
 <input type="checkbox" id="seuraa" name="valintalaatikko" class= "valintalaatikko" value="">
@@ -306,15 +304,15 @@ margin-left: 1vw;
     <div id="map"></div>
 </div>
 <div class="rangeslider">
-  <input type="range" min="3" max="100" value="10"
-                 class="slider" id="valitsin">
+  <input type="range" min="0" max="600" value="0"
+                 class="slider" id="valitsin" oninput="UpdatePage(this.value)" >
 </div>
+</form>
 <div>
     <canvas id="chart" class="kaavio"></canvas>
 </div>
 
 
 <script src="./script/test.js"></script>
-<!-- <script src="./script/read.js"></script> --!>
  </body>
 </html>
