@@ -56,7 +56,7 @@ function gpsdata(arvo) {
   var latlong = [];
   var ajoreitti = [];
   var laskuri = 0;
-  if (arvo > cycle.length) { arvo = cycle.length; }
+  if (arvo > cycle.length-1) { arvo = cycle.length-1; }
   if (arvo > aloitusluku) {
     alaraja = arvo - aloitusluku;
     ylaraja = arvo;
@@ -106,7 +106,7 @@ function gpsdata(arvo) {
 
 function gpsupdate(merkkijono)
 {
-  var luku = parseInt(merkkijono, 10);
+  var luku = parseInt(merkkijono, 10) -2;
   
   var sijainnit, lat, long, eka, vika;
   var edellinenlat = 0;
@@ -116,7 +116,7 @@ function gpsupdate(merkkijono)
   var laskuri = 0;
   var arvo = 0;
   var raja = 0;
-  if(luku<cycle.length)
+  if(luku<cycle.length-1)
   {//console.log(luku +" arvo < cycle " + cycle.length);
     if(luku<aloitusluku)
     {
@@ -144,7 +144,7 @@ function gpsupdate(merkkijono)
   }
   else {
         //console.log(luku +" arvo > cycle" + cycle.length);
-        updateylaraja = cycle.lenght;updatealaraja= cycle.lenght - aloitusluku;
+        updateylaraja = cycle.lenght;updatealaraja= cycle.length - aloitusluku;
       }
   vanhaarvo = luku;
 console.log(updateylaraja +">"+ updatealaraja); 
@@ -281,8 +281,9 @@ function kaasupolin() {
   var data = {
     label: 'Kaasupolkimen asento',
     data: dataset,
-    fill: true,
-    borderColor: '#fff',
+    //fill: true,
+    borderColor: 'rgb(255, 0, 0)',
+    backgroundColor: 'rgba(255, 0, 0, 0.5)',
     tension: 0.1
   };
   /*
@@ -291,7 +292,11 @@ function kaasupolin() {
     data: data,
     options: {
           maintainAspectRatio: false,
-  	
+  	    scales: {
+        y: {
+            beginAtZero: true
+        }
+    },
       elements: {
         line: {
           borderWidth: 3
@@ -323,7 +328,7 @@ function nopeus(arvo) {
     else { timeset.push(""); }
   }
 
-  for (let j = 0; j < cycle.length; j++) {
+  for (let j = alaraja; j < ylaraja; j++) {
     speed = cycle[j].querySelector("speed");
     if (speed != null) {
       nopeus = parseInt(speed.textContent.slice(0, -3));
@@ -340,8 +345,9 @@ function nopeus(arvo) {
     datasets: [{
       label: 'Nopeus',
       data: dataset,
-      fill: true,
-      borderColor: '#fff',
+      //fill: true,
+      borderColor: 'rgb(0, 255, 0)',
+      backgroundColor: 'rgba(0, 255, 0, 0.5)',
       tension: 0.1
     },
       kaasu,
@@ -355,6 +361,11 @@ function nopeus(arvo) {
     data: data,
     options: {
       maintainAspectRatio: false,
+    scales: {
+        y: {
+            beginAtZero: true
+        }
+    },
 
       elements: {
         line: {
@@ -395,8 +406,9 @@ function kulutus(arvo) {
   var data = {
     label: 'Polttoaineenkulutus',
     data: dataset,
-    fill: true,
-    borderColor: '#fff',
+    //fill: true,
+    borderColor: 'rgb(0, 0, 255)',
+    backgroundColor: 'rgba(0, 0, 255, 0.5)',
     tension: 0.1
   };
   /*
@@ -405,7 +417,11 @@ function kulutus(arvo) {
     data: data,
     options: {
           maintainAspectRatio: false,
-  	
+  	    scales: {
+        y: {
+            beginAtZero: true
+        }
+    },
       elements: {
         line: {
           borderWidth: 3
@@ -566,14 +582,4 @@ file.addEventListener("change", function () {
   }
   reader.readAsText(this.files[0]);
 });
-
-
-
-
-
-
-
-
-
-
 
