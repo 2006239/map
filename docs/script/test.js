@@ -282,7 +282,7 @@ function kaasupolin() {
     label: 'Kaasupolkimen asento',
     data: dataset,
     fill: true,
-    borderColor: 'rgb(255, 0, 0)',
+    borderColor: '#fff',
     tension: 0.1
   };
   /*
@@ -341,7 +341,7 @@ function nopeus(arvo) {
       label: 'Nopeus',
       data: dataset,
       fill: true,
-      borderColor: 'rgb(0, 255, 0)',
+      borderColor: '#fff',
       tension: 0.1
     },
       kaasu,
@@ -396,7 +396,7 @@ function kulutus(arvo) {
     label: 'Polttoaineenkulutus',
     data: dataset,
     fill: true,
-    borderColor: 'rgb(0, 0, 255)',
+    borderColor: '#fff',
     tension: 0.1
   };
   /*
@@ -566,6 +566,9 @@ file.addEventListener("change", function () {
   }
   reader.readAsText(this.files[0]);
 });
+
+
+
 
 
 
